@@ -1,0 +1,23 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+  jpa:
+    show-sql: true
+  mail:
+    default-encoding: UTF-8
+    host: smtp.gmail.com
+    port: 465
+    username: thenewyou.dev2020@gmail.com
+    password:
+    protocol: smtps
+    properties.mail.smtp:
+      auth: true
+      starttls.enable: true
+      starttls.required: true
+      ssl.trust: smtp.gmail.com
+jwt:
+  token:
+    secret: jwtappdemo
+    expired: 4838400000

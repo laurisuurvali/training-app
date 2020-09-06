@@ -1,0 +1,33 @@
+<div class="container">
+  <h3 mat-dialog-title>Kas sa soovid kustutada?</h3>
+  <div mat-dialog-content>
+    Id: {{data.subscriptionId}}
+    <p></p>
+    <!-- Algus: {{data.startDate}}-->
+    <p></p>
+    Challenge nimi: {{data.challengeName}}
+    <p></p>
+  </div>
+  <div *ngIf="currentSubscriptionUsersQuantity != 0"
+       mat-dialog-content>
+    <div>
+      <mat-icon color="warn">warning</mat-icon>
+    </div>
+    <button mat-button
+            color="warn"
+            routerLink="/admin/subscriptions/{{data.subscriptionId}}"
+            (click)="onNoClick()">Selle
+                                  tellimusega on seotud {{currentSubscriptionUsersQuantity}} tellija(t)!
+    </button>
+  </div>
+
+  <div mat-dialog-actions>
+    <button mat-button
+            color="warn"
+            (click)="confirmDelete()"><span>Kustuta</span> <span
+      *ngIf="currentSubscriptionUsersQuantity != 0"></span></button>
+    <button mat-button
+            (click)="onNoClick()"
+            tabindex="-1"><span>Tühista</span></button>
+  </div>
+</div>

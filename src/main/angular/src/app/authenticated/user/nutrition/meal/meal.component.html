@@ -1,0 +1,120 @@
+<div class="gesture__zone"
+     *ngIf="breakfastIsVisible"
+     (swipeleft)="onSwipeLeft('breakfastIndex', 'breakfastMeals')"
+     (swiperight)="onSwipeRight('breakfastIndex', 'breakfastMeals')">
+  <div class="card">
+    <div class="card-image">
+      <img src="{{this.breakfastMeals[this.breakfastIndex].imageLink}}"
+           class="image-responsive"
+           alt="">
+    </div>
+    <div class="card-text">
+      <h2>{{ this.breakfastMeals[this.breakfastIndex].mealName }}</h2>
+      <p>{{ this.breakfastMeals[this.breakfastIndex].calories }} kcal</p>
+      <p>{{ this.breakfastMeals[this.breakfastIndex].carbohydrates }}g süsivesikud</p>
+      <p>{{ this.breakfastMeals[this.breakfastIndex].fat }}g rasva</p>
+      <p>{{ this.breakfastMeals[this.breakfastIndex].protein }}g valku</p>
+    </div>
+    <mat-expansion-panel hideToggle="true"
+                         class="card-stats">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="stat">
+          VAATA RETSEPTI
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="card-text-recipe">
+        <pre><p [innerHTML]="this.breakfastMeals[this.breakfastIndex].recipe"></p></pre>
+      </div>
+    </mat-expansion-panel>
+  </div>
+</div>
+<div class="gesture__zone"
+     *ngIf="lunchIsVisible"
+     (swipeleft)="onSwipeLeft('lunchIndex', 'lunchMeals')"
+     (swiperight)="onSwipeRight('lunchIndex', 'lunchMeals')">
+  <div class="card">
+    <div class="card-image">
+      <img src="{{this.lunchMeals[this.lunchIndex].imageLink}}"
+           class="image-responsive"
+           alt="">
+    </div>
+    <div class="card-text">
+      <h2>{{ this.lunchMeals[this.lunchIndex].mealName }}</h2>
+      <p>{{ this.lunchMeals[this.lunchIndex].calories }} kcal</p>
+      <p>{{ this.lunchMeals[this.lunchIndex].carbohydrates }}g süsivesikud</p>
+      <p>{{ this.lunchMeals[this.lunchIndex].fat }}g rasva</p>
+      <p>{{ this.lunchMeals[this.lunchIndex].protein }}g valku</p>
+    </div>
+    <mat-expansion-panel hideToggle="true"
+                         class="card-stats">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="stat">
+          VAATA RETSEPTI
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="card-text-recipe">
+        <pre><p [innerHTML]="this.lunchMeals[this.lunchIndex].recipe"></p></pre>
+      </div>
+    </mat-expansion-panel>
+  </div>
+</div>
+<div class="gesture__zone"
+     *ngIf="secondLunchIsVisible"
+     (swipeleft)="onSwipeLeft('secondLunchIndex', 'secondLunchMeals')"
+     (swiperight)="onSwipeRight('secondLunchIndex', 'secondLunchMeals')">
+  <div class="card">
+    <div class="card-image">
+      <img src="{{this.secondLunchMeals[this.secondLunchIndex].imageLink}}"
+           class="image-responsive"
+           alt="">
+    </div>
+    <div class="card-text">
+      <h2>{{ this.secondLunchMeals[this.secondLunchIndex].mealName }}</h2>
+      <p>{{ this.secondLunchMeals[this.secondLunchIndex].calories }} kcal</p>
+      <p>{{ this.secondLunchMeals[this.secondLunchIndex].carbohydrates }}g süsivesikud</p>
+      <p>{{ this.secondLunchMeals[this.secondLunchIndex].fat }}g rasva</p>
+      <p>{{ this.secondLunchMeals[this.secondLunchIndex].protein }}g valku</p>
+    </div>
+    <mat-expansion-panel hideToggle="true"
+                         class="card-stats">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="stat">
+          VAATA RETSEPTI
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="card-text-recipe">
+        <pre><p [innerHTML]="this.secondLunchMeals[this.secondLunchIndex].recipe"></p></pre>
+      </div>
+    </mat-expansion-panel>
+  </div>
+</div>
+<div class="gesture__zone"
+     *ngIf="dinnerIsVisible"
+     (swipeleft)="onSwipeLeft('dinnerIndex', 'dinnerMeals')"
+     (swiperight)="onSwipeRight('dinnerIndex', 'dinnerMeals')">
+  <div class="card">
+    <div class="card-image">
+      <img src="{{this.dinnerMeals[this.dinnerIndex].imageLink}}"
+           class="image-responsive"
+           alt="">
+    </div>
+    <div class="card-text">
+      <h2>{{ this.dinnerMeals[this.dinnerIndex].mealName }}</h2>
+      <p>{{ this.dinnerMeals[this.dinnerIndex].calories }} kcal</p>
+      <p>{{ this.dinnerMeals[this.dinnerIndex].carbohydrates }}g süsivesikud</p>
+      <p>{{ this.dinnerMeals[this.dinnerIndex].fat }}g rasva</p>
+      <p>{{ this.dinnerMeals[this.dinnerIndex].protein }}g valku</p>
+    </div>
+    <mat-expansion-panel hideToggle="true"
+                         class="card-stats">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="stat">
+          VAATA RETSEPTI
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="card-text-recipe">
+        <pre><p [innerHTML]="this.dinnerMeals[this.dinnerIndex].recipe"></p></pre>
+      </div>
+    </mat-expansion-panel>
+  </div>
+</div>

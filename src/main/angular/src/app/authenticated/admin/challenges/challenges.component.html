@@ -1,0 +1,106 @@
+<div class="admin-content-wrapper">
+  <mat-toolbar color="primary">
+    <span>Challenges</span>
+    <span class="spacer"></span>
+    Värskenda:
+    <button mat-icon-button
+            (click)="loadData()">
+      <mat-icon>refresh</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <div class="container mat-elevation-z8">
+
+    <div class="form">
+      <mat-form-field>
+        <label>
+          <input matInput
+                 (keyup)="applyFilter($event)"
+                 placeholder="Filter">
+        </label>
+      </mat-form-field>
+    </div>
+
+    <mat-table #table
+               [dataSource]="dataSource"
+               matSort
+               class="mat-cell">
+      ng update @angular/cli @angular/core
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+      <!-- ID Column -->
+      <ng-container matColumnDef="challengeId">
+        <mat-header-cell *matHeaderCellDef
+                         mat-sort-header>Id
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.challengeId}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="challengeName">
+        <mat-header-cell *matHeaderCellDef
+                         mat-sort-header>Challenge nimi
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.challengeName}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="weekQuantity">
+        <mat-header-cell *matHeaderCellDef
+                         mat-sort-header>Nädalad
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.weekQuantity}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="challengeDetails">
+        <mat-header-cell *matHeaderCellDef
+                         mat-sort-header></mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <button mat-raised-button
+                  color="primary"
+                  (click)="details(row.challengeId)">Detailid
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <!-- actions -->
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef>
+          <button mat-icon-button
+                  color="primary"
+                  (click)="addNew()">
+            <mat-icon aria-label="Example icon-button with a heart icon">add</mat-icon>
+          </button>
+        </mat-header-cell>
+
+        <mat-cell *matCellDef="let row; let i=index;">
+          <button mat-icon-button
+                  color="primary"
+                  (click)="startEdit(i, row.challengeId, row.challengeName, row.weekQuantity, row.challenge)">
+            <mat-icon aria-label="Edit">edit</mat-icon>
+          </button>
+          <button mat-icon-button
+                  color="primary"
+                  (click)="deleteItem(i, row.challengeId, row.challengeName)">
+            <mat-icon aria-label="Delete">delete</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+
+
+    <div class="no-results"
+         [style.display]="dataSource.data.length == 0 ? '' : 'none'">
+      No results
+    </div>
+
+    <mat-paginator #paginator
+                   [length]="dataSource.filteredData.length"
+                   [pageIndex]="0"
+                   [pageSize]="10"
+                   [pageSizeOptions]="[5, 10, 25, 100]">
+    </mat-paginator>
+  </div>
+</div>

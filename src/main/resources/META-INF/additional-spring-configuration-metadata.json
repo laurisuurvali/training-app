@@ -1,0 +1,18 @@
+{
+  "properties": [
+    {
+      "name": "jwt.token.secret",
+      "type": "java.lang.String",
+      "description": "Description for jwt.token.secret."
+    },
+    {
+      "name": "jwt.token.expired",
+      "type": "java.lang.String",
+      "description": "Description for jwt.token.expired."
+    },
+    {
+      "name": "client-hosting",
+      "type": "java.lang.String",
+      "description": "Description for client-hosting."
+    }
+  ] }

@@ -1,0 +1,17 @@
+.homepage-card {
+text-align: center;
+
+}
+.feedback {
+  color: #d32f2f;
+  font-weight: bold;
+}
+.card {
+  border-radius: 25px;
+}
+iframe{
+  border-width: 0;
+}
+.card {
+  grid-template-rows: auto auto auto;
+}

@@ -1,0 +1,34 @@
+.mat-form-field {
+  max-width: 155px;
+}
+.card {
+  grid-template-rows: auto auto auto;
+}
+.card-text-recipe {
+  margin: 25px;
+  color: white;
+}
+.card-image {
+
+}
+.card-stats mat-panel-title{
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  background: #ff6659 !important;
+}
+mat-expansion-panel-header {
+  background: #ff6659 !important;
+}
+.stat {
+  text-align: center;
+  font-size: 14px;
+}
+.mat-raised-button {
+  margin-left: 10px;
+}
+.dateHeader {
+}
+.nutrition-tip {
+  font-style: italic;
+  font-size: 11px;
+}

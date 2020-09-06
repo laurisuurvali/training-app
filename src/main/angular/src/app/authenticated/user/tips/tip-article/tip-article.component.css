@@ -1,0 +1,11 @@
+.card-text {
+  line-height: 1.8;
+}
+.card-stats {
+  display: flex;
+  justify-content: center;
+}
+a {
+  color:inherit;
+  text-decoration: none;
+}

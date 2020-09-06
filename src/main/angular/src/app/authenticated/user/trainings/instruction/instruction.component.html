@@ -1,0 +1,27 @@
+<div class="card"
+     *ngFor="let instruction of instructions; let id = instructionId"
+     [attr.data-index]="id"
+     [style.marginLeft.px]="marginLeftTopRight"
+     [style.marginTop.px]="marginLeftTopRight"
+     [style.marginRight.px]="marginLeftTopRight"
+     [style.marginBottom.px]="marginBottom">
+  <div class="image-responsive"
+       *ngIf="instruction.mediaType=='IMAGE'">
+    <img src="{{instruction.mediaLink}}"
+         class="image-responsive"
+         alt="">
+  </div>
+  <div class="video-responsive"
+       *ngIf="instruction.mediaType=='VIDEO'">
+    <iframe title=""
+            [src]="instruction.mediaLinkSRU"
+            width="640"
+            height="360"
+            allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+  </div>
+  <div class="card-text">
+    <h2 *ngIf="instruction.instructionType==='EXERCISE'">Sammude eesmärk: {{instruction.stepCount}}</h2>
+    <pre><p [innerHTML]="instruction.instructionBody"></p></pre>
+  </div>
+</div>

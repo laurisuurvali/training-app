@@ -1,0 +1,44 @@
+<div *ngIf="!isLoggedIn"
+     class="loginForm">
+  <form [formGroup]="loginForm"
+        (ngSubmit)="onFormSubmit()">
+    <div class="loginFormRow">
+      <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <label>
+          <input matInput
+                 formControlName="username">
+        </label>
+        <mat-error *ngIf="username.hasError('required')">
+          Kasutajanimi on <strong>nõutud</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="loginFormRow">
+      <mat-form-field class="example-full-width">
+        <mat-label>Salasõna</mat-label>
+        <label>
+          <input matInput
+                 formControlName="password"
+                 type="password">
+        </label>
+        <mat-error *ngIf="password.hasError('required')">
+          Salasõna on <strong>nõutud</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="loginFormRow">
+      <button mat-raised-button
+              color="accent">Logi sisse
+      </button>
+    </div>
+    <div class="link">
+      <a routerLink="/auth/reset-password">Unustasid parooli?</a>
+    </div>
+  </form>
+</div>
+<mat-error class="alert alert-error"
+           *ngIf="!isLoggedIn">
+  {{ errorMessage }}
+</mat-error>
+

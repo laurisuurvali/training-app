@@ -1,0 +1,32 @@
+<div class="container">
+  <form class="mat-dialog-content"
+        (ngSubmit)="submit"
+        #formControl="ngForm">
+    <div class="form">
+      <mat-form-field color="primary"
+                      hideRequiredMarker="true">
+        <label>
+          <input matInput
+                 #inputstate
+                 class="form-control"
+                 placeholder="Challange nimi"
+                 [(ngModel)]="data.challengeName"
+                 name="challengeName"
+                 required>
+        </label>
+        <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+      <button mat-button
+              type="submit"
+              [disabled]="!formControl.valid"
+              (click)="stopEdit()">Muuda
+      </button>
+      <button mat-button
+              (click)="onNoClick()"
+              tabindex="-1">Tühista
+      </button>
+    </div>
+  </form>
+</div>

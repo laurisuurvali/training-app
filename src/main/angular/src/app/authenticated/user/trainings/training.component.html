@@ -1,0 +1,25 @@
+
+<div class="content-wrapper">
+<div class="dateHeader"><h2>{{ currentWeekday }}, {{currentDate | date:'d.MM'}}</h2></div>
+
+<mat-form-field>
+  <mat-label>
+    Vali treeningstiil
+  </mat-label>
+  <mat-select [formControl]="exerciseTypeFilter">
+    <mat-option *ngFor="let exerciseType of exerciseTypeSelect"
+                [value]="exerciseType.value">{{exerciseType.viewValue}}</mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-form-field>
+  <mat-label>
+    Vali päev
+  </mat-label>
+  <mat-select [formControl]="dayFilter">
+    <mat-option *ngFor="let day of days"
+                [value]="day.value">{{day.viewValue}}</mat-option>
+  </mat-select>
+</mat-form-field>
+<app-instruction [instructions]="this.selectedDayInstructions"></app-instruction>
+<app-exercise [exercises]="this.selectedDayExercises"></app-exercise>
+</div>

@@ -1,0 +1,108 @@
+<div class="container">
+  <form class="mat-dialog-content"
+        [formGroup]="mealForm"
+        (ngSubmit)="submit">
+    <div class="form">
+        <mat-form-field class="selectMealType">
+          <mat-label>
+            Kategooria
+          </mat-label>
+          <mat-select formControlName="mealType"
+                      [(ngModel)]="data.mealType">
+            <mat-option *ngFor="let mealType of mealTypes"
+                        [value]="mealType">{{mealType}}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="mealForm.get('mealType').hasError('required')">Nõutud väli</mat-error>
+        </mat-form-field>
+
+      <mat-form-field color="primary"
+                      hideRequiredMarker="true">
+        <label>
+          <input matInput
+                 formControlName="mealName"
+                 placeholder="Toidu nimi"
+                 [(ngModel)]="data.mealName">
+        </label>
+        <mat-error *ngIf="mealForm.get('mealName').hasError('required')">Nõutud väli</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="form">
+      <mat-form-field color="primary"
+                      hideRequiredMarker="true">
+        <label>
+          <input matInput
+                 formControlName="calories"
+                 placeholder="Kalorid"
+                 [(ngModel)]="data.calories">
+        </label>
+        <mat-error *ngIf="mealForm.get('calories').hasError('required')">Nõutud väli</mat-error>
+      </mat-form-field>
+      <mat-form-field color="primary"
+                      hideRequiredMarker="true">
+        <label>
+          <input matInput
+                 formControlName="carbohydrates"
+                 placeholder="Süsivesikud"
+                 [(ngModel)]="data.carbohydrates">
+        </label>
+        <mat-error *ngIf="mealForm.get('carbohydrates').hasError('required')">Nõutud väli</mat-error>
+      </mat-form-field>
+      <mat-form-field color="primary"
+                      hideRequiredMarker="true">
+        <label>
+          <input matInput
+                 formControlName="fat"
+                 placeholder="Rasvad"
+                 [(ngModel)]="data.fat">
+        </label>
+        <mat-error *ngIf="mealForm.get('fat').hasError('required')">Nõutud väli</mat-error>
+      </mat-form-field>
+      <mat-form-field color="primary"
+                      hideRequiredMarker="true">
+        <label>
+          <input matInput
+                 formControlName="protein"
+                 placeholder="Valgud"
+                 [(ngModel)]="data.protein">
+        </label>
+        <mat-error *ngIf="mealForm.get('protein').hasError('required')">Nõutud väli</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="form">
+      <mat-form-field color="primary"
+                      hideRequiredMarker="true">
+        <label>
+<textarea rows="10"
+          matInput
+          formControlName="recipe"
+          placeholder="Retsept"
+          [(ngModel)]="data.recipe"></textarea>
+        </label>
+        <mat-error *ngIf="mealForm.get('recipe').hasError('required')">Nõutud väli</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="form">
+      <mat-form-field color="primary"
+                      hideRequiredMarker="true">
+        <label>
+          <input matInput
+                 formControlName="imageLink"
+                 placeholder="Pildi link"
+                 [(ngModel)]="data.imageLink">
+        </label>
+        <mat-error *ngIf="mealForm.get('imageLink').hasError('required')">Nõutud väli</mat-error>
+      </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+      <button mat-button
+              type="submit"
+              [disabled]="!mealForm.valid"
+              (click)="stopEdit()">Muuda
+      </button>
+      <button mat-button
+              (click)="onNoClick()"
+              tabindex="-1">Tühista
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,51 @@
+.card {
+  max-width: 600px;
+  border-radius: 25px;
+  background: white;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
+  font-family: roboto, serif;
+  text-align: left;
+  display: grid;
+  grid-template-rows: auto auto;
+}
+
+.mainContent {
+}
+
+.userListWrapper {
+  background-color: #2A2845;
+  color: #fff;
+  display: flex;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2em;
+  flex: 1;
+  order: 1;
+  padding: 20px 0 40px 30px;
+  border-right: 1px solid #222;
+}
+
+.feedWrapper {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2em;
+  overflow-y: scroll;
+  padding: 20px 0 0 24px;
+  height: 55vh;
+}
+
+.chatFormWrapper {
+  display: grid;
+  width: calc(100% - 50px);
+  height: 100px;
+  margin-bottom: 10px;
+  background-color: transparent;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+#scroll-style::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+
+

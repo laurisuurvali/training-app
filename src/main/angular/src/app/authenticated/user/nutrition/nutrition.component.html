@@ -1,0 +1,38 @@
+<div class="content-wrapper">
+<div class="dateHeader"><h2>{{ currentWeekday }}, {{currentDate | date:'d.MM'}}</h2></div>
+
+<mat-form-field>
+  <mat-label>
+    Vali nädal
+  </mat-label>
+  <mat-select [formControl]="weekFilter">
+    <mat-option *ngFor="let week of weeks"
+                [value]="week.value">{{week.viewValue}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>
+    Vali päev
+  </mat-label>
+  <mat-select [formControl]="dayFilter">
+    <mat-option *ngFor="let day of days"
+                [value]="day.value">{{day.viewValue}}</mat-option>
+  </mat-select>
+</mat-form-field>
+  <p class="nutrition-tip">Swipe'i toite paremale ja vasakule alternatiivide vaatamiseks</p>
+
+<app-instruction [instructions]="this.currentDayInstructions"></app-instruction>
+<app-meal *ngIf="
+this.lunchMeals.length>0 &&
+this.breakfastMeals.length>0 &&
+this.secondLunchMeals.length>0 &&
+this.dinnerMeals.length>0"
+          [breakfastMeals]="this.breakfastMeals"
+          [lunchMeals]="this.lunchMeals"
+          [secondLunchMeals]="this.secondLunchMeals"
+          [dinnerMeals]="this.dinnerMeals"
+          [weekNumberId]="this.selectWeekNumberId"
+          [weekDayNumberId]="this.selectWeekDayNumberId"
+></app-meal>
+</div>

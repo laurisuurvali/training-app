@@ -1,0 +1,36 @@
+server:
+  port: 8081
+  error:
+    include-message: always
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    data: "classpath*:db/data-dev.sql"
+    platform: postgres
+    username: postgres
+    password: root
+    initialization-mode: always
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create-drop
+  mail:
+    default-encoding: UTF-8
+    host: smtp.gmail.com
+    port: 465
+    username:
+    password:
+    protocol: smtps
+    properties.mail.smtp:
+      auth: true
+      starttls.enable: true
+      starttls.required: true
+      ssl.trust: smtp.gmail.com
+jwt:
+  token:
+    secret: jwtappdemo
+    expired: 4838400000
+client-hosting: http://localhost:4200
+

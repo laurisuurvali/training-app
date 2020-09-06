@@ -1,0 +1,23 @@
+.card {
+  max-width: 600px;
+  border-radius: 25px;
+  background: white;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
+  font-family: Roboto-Light, serif;
+  text-align: center;
+  display: grid;
+  grid-template-rows: auto auto auto;
+}
+.card-text {
+}
+pre {
+  text-align: left;
+  white-space: pre-wrap;
+  font-family: Roboto-Light, serif;
+  color: grey;
+  font-size:14px;
+  font-weight: 300;
+}
+iframe{
+  border-width: 0;
+}

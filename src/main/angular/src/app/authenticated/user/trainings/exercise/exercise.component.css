@@ -1,0 +1,10 @@
+pre {
+  white-space: pre-wrap;
+  font-family: Roboto-Light, serif;
+  color: grey;
+  font-size:14px;
+  font-weight: 300;
+}
+iframe{
+  border-width: 0;
+}

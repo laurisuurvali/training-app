@@ -1,0 +1,120 @@
+<div class="container">
+
+  <form class="mat-dialog-content"
+        [formGroup]="exerciseForm"
+        (ngSubmit)="submit">
+
+    <div class="form">
+      <mat-form-field color="primary"
+                      hideRequiredMarker="true"
+                      class="jkNr">
+        <label>
+          <input matInput
+                 formControlName="orderNumber"
+                 placeholder="Jk nr"
+                 [(ngModel)]="data.orderNumber">
+        </label>
+        <mat-error *ngIf="exerciseForm.get('orderNumber').hasError('required')">Nõutud väli</mat-error>
+        <mat-error *ngIf="exerciseForm.get('orderNumber').hasError('pattern')">Ainult numbriline väärtus</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="selectExerciseType">
+        <mat-label>
+          Tüüp
+        </mat-label>
+        <mat-select formControlName="exerciseType"
+                    [(ngModel)]="data.exerciseType">
+          <mat-option *ngFor="let exerciseType of exerciseTypes"
+                      [value]="exerciseType">{{exerciseType}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="exerciseForm.get('exerciseType').hasError('required')">Nõutud väli</mat-error>
+      </mat-form-field>
+
+      <mat-form-field color="primary"
+                      hideRequiredMarker="true">
+        <label>
+          <input matInput
+                 formControlName="exerciseName"
+                 placeholder="Harjutuse nimi"
+                 [(ngModel)]="data.exerciseName">
+        </label>
+        <mat-error *ngIf="exerciseForm.get('exerciseName').hasError('required')">Nõutud väli</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="primary"
+                      hideRequiredMarker="true">
+        <label>
+<textarea rows="10"
+          matInput
+          formControlName="description"
+          placeholder="Kirjeldus"
+          [(ngModel)]="data.description"></textarea>
+        </label>
+        <mat-error *ngIf="exerciseForm.get('description').hasError('required')">Nõutud väli</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="form">
+      <mat-form-field color="primary"
+                      hideRequiredMarker="true">
+        <label>
+          <input matInput
+                 formControlName="reps"
+                 placeholder="Kordused"
+                 [(ngModel)]="data.reps">
+        </label>
+        <mat-error *ngIf="exerciseForm.get('reps').hasError('required')">Nõutud väli</mat-error>
+        <mat-error *ngIf="exerciseForm.get('reps').hasError('pattern')">Ainult numbriline väärtus</mat-error>
+      </mat-form-field>
+
+      <mat-form-field color="primary"
+                      hideRequiredMarker="true">
+        <label>
+          <input matInput
+                 formControlName="sets"
+                 placeholder="Seeriad"
+                 [(ngModel)]="data.sets">
+        </label>
+        <mat-error *ngIf="exerciseForm.get('sets').hasError('required')">Nõutud väli</mat-error>
+        <mat-error *ngIf="exerciseForm.get('sets').hasError('pattern')">Ainult numbriline väärtus</mat-error>
+      </mat-form-field>
+
+      <mat-form-field color="primary"
+                      hideRequiredMarker="true">
+        <label>
+          <input matInput
+                 formControlName="exerciseBreak"
+                 placeholder="Puhkus"
+                 [(ngModel)]="data.exerciseBreak">
+        </label>
+        <mat-error *ngIf="exerciseForm.get('exerciseBreak').hasError('required')">Nõutud väli</mat-error>
+        <mat-error *ngIf="exerciseForm.get('exerciseBreak').hasError('pattern')">Ainult numbriline väärtus</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="form">
+      <mat-form-field color="primary"
+                      hideRequiredMarker="true">
+        <label>
+          <input matInput
+                 formControlName="videoLink"
+                 placeholder="Video link"
+                 [(ngModel)]="data.videoLink">
+        </label>
+        <mat-error *ngIf="exerciseForm.get('videoLink').hasError('required')">Nõutud väli</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div mat-dialog-actions>
+      <button mat-button
+              type="submit"
+              [disabled]="!exerciseForm.valid"
+              (click)="stopEdit()">Muuda
+      </button>
+      <button mat-button
+              (click)="onNoClick()"
+              tabindex="-1">Tühista
+      </button>
+    </div>
+  </form>
+</div>

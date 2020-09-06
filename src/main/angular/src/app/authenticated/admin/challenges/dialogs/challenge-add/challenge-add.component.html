@@ -1,0 +1,49 @@
+<div class="container">
+
+  <form class="mat-dialog-content"
+        [formGroup]="challengeForm"
+        (ngSubmit)="submit">
+
+    <div class="form">
+
+      <mat-form-field color="primary"
+                      hideRequiredMarker="true">
+        <label>
+          <input matInput
+                 formControlName="challengeName"
+                 placeholder="Challenge nimi"
+                 [(ngModel)]="data.challengeName">
+        </label>
+        <mat-error *ngIf="challengeForm.get('challengeName').hasError('required')">Nõutud väli</mat-error>
+      </mat-form-field>
+
+      <mat-form-field color="primary"
+                      hideRequiredMarker="true"
+                      class="weekQuantity">
+        <label>
+          <input matInput
+                 formControlName="weekQuantity"
+                 placeholder="Nädalate arv"
+                 [(ngModel)]="data.weekQuantity">
+        </label>
+        <mat-error *ngIf="challengeForm.get('weekQuantity').hasError('required')">Nõutud väli</mat-error>
+        <mat-error *ngIf="challengeForm.get('weekQuantity').hasError('pattern')">Ainult numbriline väärtus</mat-error>
+      </mat-form-field>
+
+    </div>
+
+    <div mat-dialog-actions>
+      <button mat-button
+              type="submit"
+              [disabled]="!challengeForm.valid"
+              (click)="confirmAdd()">Lisa
+      </button>
+      <button mat-button
+              (click)="onNoClick()"
+              tabindex="-1">Tühista
+      </button>
+    </div>
+
+  </form>
+
+</div>

@@ -1,0 +1,127 @@
+<mat-toolbar color="primary">
+  <span>Toidud</span>
+  <span class="spacer"></span>
+  Värskenda:
+  <button mat-icon-button
+          (click)="loadData()">
+    <mat-icon>refresh</mat-icon>
+  </button>
+</mat-toolbar>
+
+<div class="container mat-elevation-z8">
+
+  <div class="form">
+    <mat-form-field>
+      <label>
+        <input matInput
+               (keyup)="applyFilter($event)"
+               placeholder="Filter">
+      </label>
+    </mat-form-field>
+  </div>
+
+  <mat-table #table
+             [dataSource]="dataSource"
+             matSort
+             class="mat-cell">
+    <ng-container matColumnDef="mealId">
+      <mat-header-cell *matHeaderCellDef
+                       mat-sort-header>Id
+      </mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.mealId}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="mealName">
+      <mat-header-cell *matHeaderCellDef
+                       mat-sort-header>Toidu nimi
+      </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.mealName}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="mealType">
+      <mat-header-cell *matHeaderCellDef
+                       mat-sort-header>Söögikord
+      </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.mealType}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="calories">
+      <mat-header-cell *matHeaderCellDef
+                       mat-sort-header>Kalorid
+      </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.calories}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="carbohydrates">
+      <mat-header-cell *matHeaderCellDef
+                       mat-sort-header>Süsivesikud
+      </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.carbohydrates}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="fat">
+      <mat-header-cell *matHeaderCellDef
+                       mat-sort-header>Rasvad
+      </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.fat}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="protein">
+      <mat-header-cell *matHeaderCellDef
+                       mat-sort-header>Valk
+      </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.protein}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="preview">
+      <mat-header-cell *matHeaderCellDef
+                       mat-sort-header>Eelvaade
+      </mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <button mat-raised-button
+                color="primary"
+                (click)="previewMeal(row)">Vaata
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef>
+        <button mat-icon-button
+                color="primary"
+                (click)="addNew()">
+          <mat-icon aria-label="Example icon-button with a heart icon">add</mat-icon>
+        </button>
+      </mat-header-cell>
+
+      <mat-cell *matCellDef="let row">
+        <button mat-icon-button
+                color="primary"
+                (click)="startEdit(row.mealId, row.mealType, row.mealName, row.calories, row.carbohydrates, row.fat, row.protein, row.recipe, row.imageLink)">
+          <mat-icon aria-label="Edit">edit</mat-icon>
+        </button>
+        <button mat-icon-button
+                color="primary"
+                (click)="deleteItem(row.mealId, row.mealName, row.mealType)">
+          <mat-icon aria-label="Delete">delete</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+
+  <div class="no-results"
+       [style.display]="dataSource.data.length == 0 ? '' : 'none'">
+    Toidud puuduvad
+  </div>
+
+  <mat-paginator #paginator
+                 [length]="dataSource.filteredData.length"
+                 [pageIndex]="0"
+                 [pageSize]="10"
+                 [pageSizeOptions]="[5, 10, 25, 100]">
+  </mat-paginator>
+</div>

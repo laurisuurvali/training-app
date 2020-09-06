@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="card">
+      <div class="card-image">
+        <img src="{{this.meals[0].imageLink}}"
+             class="image-responsive">
+      </div>
+      <div class="card-text">
+        <h2>{{ this.meals[0].mealName }}</h2>
+        <p>{{ this.meals[0].calories }} kcal</p>
+        <p>{{ this.meals[0].carbohydrates }}g süsivesikud</p>
+        <p>{{ this.meals[0].fat }}g rasva</p>
+        <p>{{ this.meals[0].protein }}g valku</p>
+      </div>
+      <mat-expansion-panel hideToggle="true"
+                           class="card-stats">
+        <mat-expansion-panel-header>
+          <mat-panel-title class="stat">
+            VAATA RETSEPTI
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="card-text-recipe">
+          <pre><p [innerHTML]="this.meals[0].recipe"></p></pre>
+        </div>
+      </mat-expansion-panel>
+    </div>
+</div>

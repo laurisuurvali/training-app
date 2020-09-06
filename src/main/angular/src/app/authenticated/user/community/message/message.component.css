@@ -1,0 +1,51 @@
+.messageContainer{
+    height: auto;
+    border-radius: 5px;
+    align-items:stretch;
+    background-color: #eee;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.26), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+
+
+.messageData{
+    flex: 1;
+    padding: 10px;
+    font-size: 0.7em;
+}
+
+.sender{
+    color: #222;
+    font-weight: bold;
+}
+
+.isOwnSender{
+    color: black;
+}
+
+.timestamp {
+    color: #555;
+    font-style: italic;
+}
+
+.isOwnTimestamp{
+    color: dimgrey;
+}
+
+.messageContent{
+    height: auto;
+    flex: 9;
+    background-color: #fff;
+    padding: 10px;
+    font-size: 14px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.isOwnMessageContent{
+  background-color: #f9fff9;
+    color: black;
+}
+.isOwnMessageContainer{
+  background-color: #f3fff3;
+}

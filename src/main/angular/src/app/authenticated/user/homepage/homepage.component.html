@@ -1,0 +1,30 @@
+<div class="content-wrapper">
+<div class="card">
+  <div class="video-responsive">
+    <iframe title=""
+            [src]="videoLinkSRU"
+            width="640"
+            height="360"
+            allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+  </div>
+  <div class="homepage-card">
+    <div class="card-text">
+      <h2>Tere, {{ name }}!</h2>
+
+      <div *ngIf="isSunday"
+           >
+        <p class="feedback">
+        Täna on pühapäev, palun saada nädala tagasiside soopmonika@gmail.com!
+        </p>
+      </div>
+      <p>
+      Suur aitäh sulle, et soovid oma elus pöörata uue lehe ja mul on nii hea meel, et sa teed seda koos minuga!
+      </p>
+      <p>
+      Täna on programmi {{ currentChallengeDayNumber }}. päev, ainult {{ challengeDaysRemaining }} päeva veel!
+      </p>
+    </div>
+  </div>
+</div>
+</div>

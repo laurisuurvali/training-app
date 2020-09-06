@@ -1,0 +1,6 @@
+<div class="feed">
+  <div *ngFor="let message of feed"
+       class="message">
+    <app-message [post]="message"></app-message>
+  </div>
+</div>

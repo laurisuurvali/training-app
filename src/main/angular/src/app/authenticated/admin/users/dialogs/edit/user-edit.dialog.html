@@ -1,0 +1,89 @@
+<div class="container">
+  <form class="mat-dialog-content"
+        (ngSubmit)="submit"
+        #formControl="ngForm">
+    <div class="form">
+    </div>
+    <div class="form">
+      <mat-form-field color="primary">
+        <label>
+          <input matInput
+                 #inputstate
+                 class="form-control"
+                 placeholder="Eesnimi"
+                 [(ngModel)]="data.firstName"
+                 name="firstName"
+                 required>
+        </label>
+        <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="form">
+      <mat-form-field color="primary">
+        <label>
+          <input matInput
+                 placeholder="Perenimi"
+                 [(ngModel)]="data.lastName"
+                 name="lastName"
+                 required>
+        </label>
+      </mat-form-field>
+    </div>
+    <div class="form">
+      <mat-form-field>
+        <label>
+          <input matInput
+                 #email="ngModel"
+                 type="email"
+                 [(ngModel)]="data.username"
+                 name="email"
+                 placeholder="Email"
+                 [class.is-invalid]="email.invalid && email.touched"
+                 required
+                 pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+        </label>
+        <mat-error *ngIf="email.errors && (email.invalid || email.touched) && email.errors.pattern">Palun sisesta kehtiv
+                                                                                                    e-posti aadress.
+        </mat-error>
+        <mat-error *ngIf="email.errors && (email.invalid || email.touched) && email.errors.required">Email is
+                                                                                                     required.
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="form">
+      <mat-form-field color="primary">
+        <mat-label>Tellimus</mat-label>
+        <mat-select name="subscriptions"
+                    [(ngModel)]="data.subscriptionSubscriptionId">
+          <mat-option *ngFor="let subscription of subscriptions"
+                      [value]="subscription.subscriptionId">
+            {{subscription.startDate}} {{subscription.challenge.challengeName}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="form">
+      <mat-form-field>
+        <mat-label>
+          Staatus
+        </mat-label>
+        <mat-select name="status"
+                    [(ngModel)]="data.status">
+          <mat-option *ngFor="let status of status"
+                      [value]="status">{{status}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </form>
+  <div mat-dialog-actions>
+    <button mat-button
+            type="submit"
+            [disabled]="!formControl.valid"
+            (click)="stopEdit()">Uuenda
+    </button>
+    <button mat-button
+            (click)="onNoClick()"
+            tabindex="-1">Tühista
+    </button>
+  </div>
+</div>

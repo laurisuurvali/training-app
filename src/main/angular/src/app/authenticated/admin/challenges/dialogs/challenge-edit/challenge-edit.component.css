@@ -1,0 +1,8 @@
+.asterisk_input::after
+{
+  content:" *";
+  color: red;
+}
+.mat-dialog-content {
+  height: 125px;
+}

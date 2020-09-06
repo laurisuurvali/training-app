@@ -1,0 +1,84 @@
+<div class="container">
+
+  <form class="mat-dialog-content"
+        [formGroup]="instructionForm"
+        (ngSubmit)="submit">
+
+    <div class="form">
+
+      <mat-form-field class="selectInstructionType">
+        <mat-label>
+          Kategooria
+        </mat-label>
+        <mat-select formControlName="instructionType"
+                    [(ngModel)]="data.instructionType">
+          <mat-option *ngFor="let instructionType of instructionTypes"
+                      [value]="instructionType">{{instructionType}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="instructionForm.get('instructionType').hasError('required')">Nõutud väli</mat-error>
+      </mat-form-field>
+
+      <mat-form-field color="primary"
+                      hideRequiredMarker="true">
+        <label>
+          <input matInput
+                 formControlName="stepCount"
+                 placeholder="Sammude arv"
+                 [(ngModel)]="data.stepCount">
+        </label>
+        <mat-error *ngIf="instructionForm.get('stepCount').hasError('required')">Nõutud väli</mat-error>
+        <mat-error *ngIf="instructionForm.get('stepCount').hasError('pattern')">Ainult numbriline väärtus</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="form">
+      <mat-form-field color="primary"
+                      hideRequiredMarker="true">
+        <label>
+<textarea rows="10"
+          matInput
+          formControlName="instructionBody"
+          placeholder="Juhised"
+          [(ngModel)]="data.instructionBody"></textarea>
+        </label>
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field class="selectMediaType">
+        <mat-label>
+          Meedia
+        </mat-label>
+        <mat-select formControlName="mediaType"
+                    [(ngModel)]="data.mediaType">
+          <mat-option *ngFor="let mediaType of mediaTypes"
+                      [value]="mediaType">{{mediaType}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field color="primary"
+                      hideRequiredMarker="true">
+        <label>
+          <input matInput
+                 formControlName="mediaLink"
+                 placeholder="Faili link"
+                 [(ngModel)]="data.mediaLink">
+        </label>
+        <mat-error *ngIf="instructionForm.get('mediaLink').hasError('required')">Nõutud väli</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div mat-dialog-actions>
+      <button mat-button
+              type="submit"
+              [disabled]="!instructionForm.valid"
+              (click)="stopEdit()">Muuda
+      </button>
+      <button mat-button
+              (click)="onNoClick()"
+              tabindex="-1">Tühista
+      </button>
+    </div>
+
+  </form>
+
+</div>

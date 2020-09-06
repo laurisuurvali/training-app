@@ -1,0 +1,15 @@
+<div class="admin-content-wrapper">
+<div class="challenge-info">
+  <div>
+
+    <span><h2>{{subscription?.challenge?.challengeName}} {{subscription?.startDate}}</h2></span>
+
+  </div>
+
+  <button mat-raised-button
+          color="primary"
+          (click)="sendResetPasswordLinkToAllUsers()">Saada uus parool kõigile
+  </button>
+</div>
+<app-subscription-users></app-subscription-users>
+</div>

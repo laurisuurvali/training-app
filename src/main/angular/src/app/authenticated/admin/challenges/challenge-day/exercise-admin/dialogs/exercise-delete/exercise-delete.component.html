@@ -1,0 +1,18 @@
+<div class="container">
+  <h3 mat-dialog-title>Kas sa soovid kustutada?</h3>
+  <div mat-dialog-content>
+    Id: {{data.exerciseId}}
+    <br>
+    Nimi: {{data.exerciseName}}
+  </div>
+
+  <div mat-dialog-actions>
+    <button mat-button
+            (click)="confirmDelete()">Kustuta
+    </button>
+    <button mat-button
+            (click)="onNoClick()"
+            tabindex="-1">Tühista
+    </button>
+  </div>
+</div>

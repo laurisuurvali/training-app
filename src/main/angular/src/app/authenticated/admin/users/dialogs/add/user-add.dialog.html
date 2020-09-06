@@ -1,0 +1,76 @@
+<div class="container">
+  <h3 mat-dialog-title>Lisa uus kasutaja</h3>
+  <form class="mat-dialog-content"
+        (ngSubmit)="submit"
+        #formControl="ngForm">
+    <div class="form">
+      <mat-form-field color="primary">
+        <label>
+          <input matInput
+                 #inputstate
+                 class="form-control"
+                 placeholder="Eesnimi"
+                 [(ngModel)]="data.firstName"
+                 name="firstName"
+                 required>
+        </label>
+        <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="form">
+      <mat-form-field color="primary">
+        <label>
+          <input matInput
+                 placeholder="Perenimi"
+                 [(ngModel)]="data.lastName"
+                 name="lastName"
+                 required>
+        </label>
+      </mat-form-field>
+    </div>
+    <div class="form">
+      <mat-form-field>
+        <label>
+          <input matInput
+                 #username="ngModel"
+                 type="email"
+                 [(ngModel)]="data.username"
+                 name="data_email"
+                 placeholder="Email"
+                 [class.is-invalid]="username.invalid && username.touched"
+                 required
+                 pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+        </label>
+        <mat-error *ngIf="username.errors && (username.invalid || username.touched) && username.errors.pattern">Palun sisesta kehtiv
+                                                                                                    e-posti aadress.
+        </mat-error>
+        <mat-error *ngIf="username.errors && (username.invalid || username.touched) && username.errors.required">Email is
+                                                                                                     required.
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="form">
+      <mat-form-field color="primary">
+        <mat-label>Subscriptions</mat-label>
+        <mat-select name="subscriptions"
+                    [(ngModel)]="data.subscriptionSubscriptionId">
+          <mat-option *ngFor="let subscription of subscriptions"
+                      [value]="subscription.subscriptionId">
+            {{subscription.startDate}} {{subscription.challenge.challengeName}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+      <button mat-button
+              type="submit"
+              [disabled]="!formControl.valid"
+              (click)="confirmAdd()">Lisa
+      </button>
+      <button mat-button
+              (click)="onNoClick()"
+              tabindex="-1">Tühista
+      </button>
+    </div>
+  </form>
+</div>

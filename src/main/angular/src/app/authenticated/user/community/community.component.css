@@ -1,0 +1,35 @@
+.messageInput {
+  max-width: 600px;
+  margin: 10px;
+  display: grid;
+}
+textarea {
+  max-width: 99%;
+}
+
+.messageBoard {
+  margin: 30px 10px 10px 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  max-width: 600px;
+  border-radius: 25px;
+  background: white;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
+}
+.message {
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px;
+  background-color: #ebebeb;
+}
+.message-author {
+  font-weight: bold;
+}
+.message-date {
+  margin-left: 10px;
+  color: #888888;
+}
+.messageBody {
+  font-size:14px;
+  font-weight: 300;
+}

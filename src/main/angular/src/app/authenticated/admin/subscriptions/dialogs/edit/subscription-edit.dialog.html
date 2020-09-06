@@ -1,0 +1,50 @@
+<div class="container">
+  <form class="mat-dialog-content"
+        (ngSubmit)="submit"
+        #formControl="ngForm">
+
+    <div class="form">
+      <mat-form-field color="primary">
+        <mat-label>Vali kuupäev</mat-label>
+        <label>
+          <input matInput
+                 [matDatepicker]="picker"
+                 class="form-control"
+                 [(ngModel)]="data.startDate"
+                 name="startDate"
+                 required>
+        </label>
+        <mat-datepicker-toggle matSuffix
+                               [for]="picker">
+          <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+
+    <mat-form-field color="primary">
+      <mat-label>Challenge name</mat-label>
+      <mat-select name="challenges"
+                  [(ngModel)]="selectedChallenge">
+        <mat-option *ngFor="let challenge of challenges"
+                    [value]="challenge">
+          {{challenge.challengeName}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+    <div mat-dialog-actions>
+      <button mat-button
+              type="submit"
+              [disabled]="!formControl.valid"
+              (click)="stopEdit()">Muuda
+      </button>
+      <button mat-button
+              (click)="onNoClick()"
+              tabindex="-1">Tühista
+      </button>
+    </div>
+  </form>
+</div>

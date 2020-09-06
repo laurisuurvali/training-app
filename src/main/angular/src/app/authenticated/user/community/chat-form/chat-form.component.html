@@ -1,0 +1,15 @@
+<form [formGroup]="chatForm" #formDirective="ngForm"
+      (ngSubmit)=sendMessage(formDirective)>
+  <mat-form-field>
+    <mat-label>Sõnum</mat-label>
+    <label>
+      <input matInput
+             formControlName="message">
+    </label>
+  </mat-form-field>
+  <button [disabled]="!chatForm.valid"
+          mat-raised-button
+          color="accent">
+    Saada
+  </button>
+</form>

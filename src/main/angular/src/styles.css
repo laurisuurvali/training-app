@@ -1,0 +1,141 @@
+@import '~animate.css/animate.min.css';
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto-Regular, Verdana, sans-serif; }
+
+@font-face {
+  font-family: Roboto-Black;
+  src: url(assets/fonts/Roboto-Black.ttf) format("opentype");
+}
+
+@font-face {
+  font-family: Roboto-Light;
+  src: url(assets/fonts/Roboto-Light.ttf) format("opentype");
+}
+
+@font-face {
+  font-family: Roboto-Medium;
+  src: url(assets/fonts/Roboto-Medium.ttf) format("opentype");
+}
+
+@font-face {
+  font-family: Roboto-Regular;
+  src: url(assets/fonts/Roboto-Regular.ttf) format("opentype");
+}
+
+.mat-card {
+  max-width: 700px;
+}
+.image-responsive {
+  pointer-events: none;
+  width: 100%;
+  height: auto;
+}
+.video-responsive{
+  overflow:hidden;
+  padding-bottom:56.25%;
+  position:relative;
+  height:0;
+}
+.video-responsive iframe{
+  left:0;
+  top:0;
+  height:100%;
+  width:100%;
+  position:absolute;
+}
+.video-responsive img{
+  left:0;
+  top:0;
+  max-width: 100%;
+  height: auto;
+  position:absolute;
+}
+.training-div {
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card {
+  max-width: 600px;
+  margin: 10px auto 25px auto;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  background: white;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
+  font-family: Roboto-Regular;
+  text-align: left;
+  display: grid;
+  grid-template-rows: auto auto 60px;
+}
+
+.card-video {
+
+}
+
+.card-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  background: #f5f5f5;
+}
+
+.card-stats .stat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: black;
+  padding: 10px;
+}
+
+.stat-name {
+  font-size: 11px;
+}
+
+.stat-value {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.card-text {
+  margin: 25px;
+}
+.card-text p {
+  color: grey;
+  font-size:14px;
+  font-weight: 300;
+}
+.card-text h2 {
+  margin-top:0px;
+  font-size:28px;
+}
+.dateHeader h2{
+  margin: 10px;
+  font-size:28px;
+  font-family: roboto;
+}
+.preview-panel .mat-dialog-container {
+  padding: 0;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+.preview-panel-meal .mat-dialog-container {
+  padding: 0;
+}
+.preview-panel-instruction .mat-dialog-container {
+  padding: 0;
+  border-radius: 25px;
+}
+.content-wrapper {
+  margin: 35px auto auto auto;
+  max-width: 600px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.admin-content-wrapper {
+  margin: 35px auto auto auto;
+  max-width: 1200px;
+}

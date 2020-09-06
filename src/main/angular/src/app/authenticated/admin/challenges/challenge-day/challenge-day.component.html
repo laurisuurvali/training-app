@@ -1,0 +1,35 @@
+<div class="admin-content-wrapper">
+  <mat-form-field appearance="fill">
+    <mat-label>Vali nädal</mat-label>
+    <mat-select [formControl]="weekFilter">
+      <mat-option *ngFor="let week of weeks"
+                  [value]="week">
+        Nädal {{week}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Vali päev</mat-label>
+    <mat-select [formControl]="dayFilter">
+      <mat-option *ngFor="let days of weekDays"
+                  [value]="days">
+        Päev {{days}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div class="challengeDayTable">
+    <app-instruction-admin [dayNumberId]="this.dayNumberId"
+                           [weekNumberId]="this.weekNumberId"></app-instruction-admin>
+  </div>
+  <div class="challengeDayTable">
+    <app-exercise-admin [dayNumberId]="this.dayNumberId"
+                        [weekNumberId]="this.weekNumberId"></app-exercise-admin>
+  </div>
+  <div class="challengeDayTable">
+    <app-meal-admin [dayNumberId]="this.dayNumberId"
+                    [weekNumberId]="this.weekNumberId"></app-meal-admin>
+  </div>
+</div>
+

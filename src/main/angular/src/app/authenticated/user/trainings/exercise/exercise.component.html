@@ -1,0 +1,37 @@
+<div class="card"
+     *ngFor="let exercise of exercises; let i = orderNumber"
+     [attr.data-index]="i"
+     [style.marginLeft.px]="marginLeftTopRight"
+     [style.marginTop.px]="marginLeftTopRight"
+     [style.marginRight.px]="marginLeftTopRight"
+     [style.marginBottom.px]="marginBottom">
+  <div class="card-video">
+    <div class="video-responsive">
+      <iframe title=""
+              [src]="exercise.videoLinkSRU"
+              width="640"
+              height="360"
+              allow="autoplay; fullscreen"
+              allowfullscreen></iframe>
+    </div>
+  </div>
+  <div class="card-text">
+    <h2>{{ exercise.exerciseName }}</h2>
+    <pre><p [innerHTML]="exercise.description"></p></pre>
+  </div>
+  <div class="card-stats">
+    <div class="stat">
+      <div class="stat-name">SEERIAD</div>
+      <div class="stat-value">{{ exercise.sets }}</div>
+    </div>
+    <div class="stat">
+      <div class="stat-name">KORDUSED</div>
+      <div class="stat-value">{{ exercise.reps }}</div>
+    </div>
+    <div class="stat">
+      <div class="stat-name">PUHKUS</div>
+      <div class="stat-value">{{ exercise.exerciseBreak }}</div>
+    </div>
+  </div>
+</div>
+
