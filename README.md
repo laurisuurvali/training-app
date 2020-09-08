@@ -1,7 +1,7 @@
 
 # The New You - personal trainer
 
-This repository is a clone with no commit history of our private repository to protect sensitive data.
+This repository is a clone of our private repository with no commit history to protect sensitive data.
 
 ##  Description
 The Training and Nutrition Application is a web app which allows users to participate in Challenges  to achieve optimal weight and a strong body. The application provides users with a mandatory training and nutrition plan on a daily basis and necessary tips. 
