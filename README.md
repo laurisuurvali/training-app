@@ -1,5 +1,8 @@
 
 # The New You - personal trainer
+
+This repository is a clone with no commit history of our private repository to protect sensitive data.
+
 ##  Description
 The Training and Nutrition Application is a web app which allows users to participate in Challenges  to achieve optimal weight and a strong body. The application provides users with a mandatory training and nutrition plan on a daily basis and necessary tips. 
  
@@ -52,6 +55,7 @@ During tests an in-memory database is used.
  - **Spring Boot** -  Java-based open-source back-end framework  
  - **Spring Security** - authentication and access-control framework
  - **Spring WebSocket** - connection between a web browser and a server
+ - **Spring Email** - email sending from spring application
  - **Gradle** - Dependency Management
  - **JUnit** and **Mockito** -testing frameworks
 ### Front-End
