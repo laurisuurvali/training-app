@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://app.thenewyou.ee/api/v1/',
-  socketUrl: 'https://app.thenewyou.ee/socket/',
+  apiUrl: 'http://localhost:8081/api/v1/',
+  socketUrl: 'http://localhost:8081/socket/',
 };
 
 /*
