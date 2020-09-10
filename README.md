@@ -1,5 +1,5 @@
 
-# The New You - personal trainer
+# The New You - training and nutrition web app
 
 This repository is a clone of our private repository with no commit history to protect sensitive data.
 
