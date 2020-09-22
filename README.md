@@ -6,6 +6,10 @@ This repository is a clone of our private repository with no commit history to p
 ##  Description
 The Training and Nutrition Application is a web app which allows users to participate in Challenges  to achieve optimal weight and a strong body. The application provides users with a mandatory training and nutrition plan on a daily basis and necessary tips. The training and nutrition plans are created in the admin view using our own custom CMS.
 
+## Presentation Video
+
+[YouTube link](https://www.youtube.com/watch?v=7zBCi7dUyyk&t=2s&ab_channel=SoftwareDevelopmentAcademy)
+
 ## Screenshots
 
 ![User view screenshot](https://www.upload.ee/image/12256357/screen1.jpg)
